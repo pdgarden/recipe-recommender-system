@@ -38,3 +38,7 @@ pip install -r requirements.txt
 ```sh
 streamlit run app.py
 ```
+
+### Cloud access
+
+Application hosted by streamlit accessible [here](https://pdgarden-recipe-recommender-system-app-xlq89n.streamlitapp.com/).
