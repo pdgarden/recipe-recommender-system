@@ -6,12 +6,13 @@ Scrap recipes from db recipe, available here: https://cosylab.iiitd.edu.in/recip
 # Imports
 
 import os
-import requests
 import time
-import pandas as pd
-from bs4 import BeautifulSoup
 from typing import List
 from dataclasses import dataclass
+
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
 
 
 # -------------------------------------------------------------------------------------------------------------------- #
@@ -95,7 +96,7 @@ if __name__ == "__main__":
 
             list_recipes.append(recipe)
 
-        except Exception as exc:
+        except Exception:
             pass
 
         if curr_id % DISPLAYED_PROGRESSION_BATCH == 0:
@@ -121,7 +122,7 @@ if __name__ == "__main__":
     df.to_csv(os.path.join(os.path.dirname(os.getcwd()), "data", "recipe_db_raw.zip"), index=False)
 
     print(
-        f"Done",
+        "Done",
         f"nb_recipes: {len(df)}",
         f"first recipes: {df.head()}",
         sep="\n\n---\n",

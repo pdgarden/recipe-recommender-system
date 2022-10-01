@@ -4,17 +4,21 @@ The following repo implements a content based recipe recommendation system. It's
 using streamlit.
 
 
-## Dataset:
+
+## Dataset
 
 * The dataset used is a sample of +6000 recipes extracted from the [recipeDB](https://cosylab.iiitd.edu.in/recipedb/),
 * See [scrap_recipes.py](eda/scrap_recipes.py) for extraction script.
 * For each recipe, the name, ingredients and origin is provided.
 
 
-## Exploratory data analysis:
+
+## Exploratory data analysis
 
 The EDA os led through the [eda_recipe_recommendations.ipynb](eda/eda_recipe_recommendations.ipynb) notebooks and 
 explore the use of word embeddings and KNN algoithm to define an affinity score for the user.
+
+
 
 ## Implementation
 
