@@ -1,6 +1,4 @@
-<img src="https://img.shields.io/badge/python-3.11-blue" alt="Supported Python version">
-<img src="https://img.shields.io/static/v1?logo=uv&label=uv&message=5.1.0&color=blue">
-<img src="https://img.shields.io/static/v1?logo=streamlit&label=uv&message=1.22.0&color=blue">
+<img src="https://img.shields.io/badge/python-3.11-blue" alt="Supported Python version"> <img src="https://img.shields.io/static/v1?logo=uv&label=uv&message=5.1.0&color=blue"> <img src="https://img.shields.io/static/v1?logo=streamlit&label=uv&message=1.22.0&color=blue">
 
 
 # Recipe recommender system
