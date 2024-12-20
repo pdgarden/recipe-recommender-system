@@ -1,6 +1,6 @@
 # -------------------------------------------------------------------------------------------------------------------- #
 """
-Streamlit app implemmenting a recipe recommender system
+Streamlit app implementing a recipe recommender system
 """
 # -------------------------------------------------------------------------------------------------------------------- #
 # Imports
@@ -98,7 +98,7 @@ if launch_recipes_recommendation:
     ).update_layout({"plot_bgcolor": "#E0E0E0"})
 
     # App layouts
-    tab_table, tab_plots = st.tabs(["🗃 Table vizualisation", "📈 Scatter plot vizualisation"])
+    tab_table, tab_plots = st.tabs(["🗃 Table vizualisation", "📈 Scatter plot visualization"])
 
     tab_table.text("Here are some recipes that have been identified as corresponding to your tastes")
     tab_table.dataframe(df_recommendation)

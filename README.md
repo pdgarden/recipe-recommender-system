@@ -1,6 +1,6 @@
 # Recipe recommender system
 
-The following repo implements a content based recipe recommendation system. It's studied using a notebbok, and served
+The following repo implements a content based recipe recommendation system. It's studied using a notebook, and served
 using streamlit.
 
 
@@ -16,7 +16,7 @@ using streamlit.
 ## Exploratory data analysis
 
 The EDA os led through the [eda_recipe_recommendations.ipynb](eda/eda_recipe_recommendations.ipynb) notebooks and 
-explore the use of word embeddings and KNN algoithm to define an affinity score for the user.
+explore the use of word embeddings and KNN algorithm to define an affinity score for the user.
 
 
 
@@ -27,7 +27,7 @@ The studied recommendation system is implemented using streamlit.
 ### Requirements
 
 The requirements file only contains dependencies necessary to run the streamlit app. 
-Some additionnal dependencies are required for the scrapping script and the notebook eda.
+Some additional dependencies are required for the scrapping script and the notebook eda.
 
 ```sh
 pip install -r requirements.txt
