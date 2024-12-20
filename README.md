@@ -20,23 +20,24 @@ explore the use of word embeddings and KNN algorithm to define an affinity score
 
 
 
-## Implementation
+## Quickstart
 
 The studied recommendation system is implemented using streamlit.
 
-### Requirements
+### Set up
 
-The requirements file only contains dependencies necessary to run the streamlit app. 
+1. Install uv (v0.5.10):
+   1. For macOS / Linux `curl -LsSf https://astral.sh/uv/0.5.10/install.sh | sh`
+   2. For windows: `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/0.5.10/install.ps1 | iex"`
+2. Create virtual environment: `uv sync`
+
+The lock file only contains dependencies necessary to run the streamlit app. 
 Some additional dependencies are required for the scrapping script and the notebook eda.
-
-```sh
-pip install -r requirements.txt
-```
 
 ### Launch local web server
 
 ```sh
-streamlit run app.py
+uv run streamlit run app.py
 ```
 
 ### Cloud access
