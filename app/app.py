@@ -36,29 +36,31 @@ launch_recipes_recommendation = st.sidebar.button("Get recipe recommendations")
 # Recipe recommendation
 
 if launch_recipes_recommendation:
+    df_features = constants.DF_FEATURES.copy()
+
     # Compute affinity score
-    constants.DF_FEATURES["affinity_score_label"] = labelize_recipes(
-        constants.DF_FEATURES["Ingredients"], liked_ingredients, disliked_ingredients
+    df_features["affinity_score_label"] = labelize_recipes(
+        df_features["Ingredients"], liked_ingredients, disliked_ingredients
     )
-    constants.DF_FEATURES["affinity_score_estimated"] = compute_recipe_affinity_score(constants.DF_FEATURES)
+    df_features["affinity_score_estimated"] = compute_recipe_affinity_score(df_features)
 
     # Select recipes with most affinity among labelized and estimated recipes
-    constants.DF_FEATURES_AFFINITY_ESTIMATED = constants.DF_FEATURES.dropna(
+    df_features_AFFINITY_ESTIMATED = df_features.dropna(
         subset="affinity_score_estimated"
     ).sort_values("affinity_score_estimated")
 
-    constants.DF_FEATURES_AFFINITY_LABELED = constants.DF_FEATURES.dropna(subset="affinity_score_label").sort_values(
+    df_features_AFFINITY_LABELED = df_features.dropna(subset="affinity_score_label").sort_values(
         "affinity_score_label"
     )
 
-    df_recommendation = pd.concat([constants.DF_FEATURES_AFFINITY_ESTIMATED, constants.DF_FEATURES_AFFINITY_LABELED])
+    df_recommendation = pd.concat([df_features_AFFINITY_ESTIMATED, df_features_AFFINITY_LABELED])
     df_recommendation = df_recommendation[constants.AFFINITY_PLOT_DISPLAYED_HOVER_COLUMNS]
 
     # Recipes vizualisation
     fig_1 = px.scatter(
-        constants.DF_FEATURES[constants.DF_FEATURES.affinity_score_label != 0],
-        x="tsne_comp_0",
-        y="tsne_comp_1",
+        df_features[df_features.affinity_score_label != 0],
+        x="umap_comp_0",
+        y="umap_comp_1",
         color="affinity_score_label",
         hover_data=constants.AFFINITY_PLOT_DISPLAYED_HOVER_COLUMNS,
         color_continuous_scale=px.colors.diverging.RdBu_r,
@@ -67,9 +69,9 @@ if launch_recipes_recommendation:
     ).update_layout({"plot_bgcolor": "#E0E0E0"})
 
     fig_2 = px.scatter(
-        constants.DF_FEATURES.dropna(subset="affinity_score_estimated"),
-        x="tsne_comp_0",
-        y="tsne_comp_1",
+        df_features.dropna(subset="affinity_score_estimated"),
+        x="umap_comp_0",
+        y="umap_comp_1",
         color="affinity_score_estimated",
         hover_data=constants.AFFINITY_PLOT_DISPLAYED_HOVER_COLUMNS,
         color_continuous_scale=px.colors.diverging.RdBu_r,

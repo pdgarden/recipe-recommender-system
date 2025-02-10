@@ -32,8 +32,8 @@ def labelize_recipes(
 def compute_recipe_affinity_score(df: pd.DataFrame) -> pd.DataFrame:
     NB_NEIGHBORS = 5
 
-    glove_embedding_cols = [c for c in df.columns if "glove" in c]
-    embedding_matrix = df[glove_embedding_cols].astype("float32").to_numpy()
+    embedding_cols = [c for c in df.columns if "embedding_" in c]
+    embedding_matrix = df[embedding_cols].astype("float32").to_numpy()
 
     # get label and unlabeled embeddings
     labeled_embeddings = embedding_matrix[df.affinity_score_label != 0, :]
