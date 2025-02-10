@@ -1,5 +1,5 @@
 name: Linter - Ruff
-on: [ push, pull_request ]
+on: [ push ]
 
 jobs:
   ruff:
