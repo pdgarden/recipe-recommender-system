@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - eda/eda_recipe_recommendations.ipynb
+
+website:
+  navbar:
+    background: "#497D74"
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            href: https://github.com/pdgarden/recipe-recommender-system
+
+format:
+  html:
+    theme: flatly
+
