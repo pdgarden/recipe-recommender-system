@@ -17,3 +17,14 @@ dev = [
     "pre-commit>=4.1.0",
     "ruff>=0.9.5",
 ]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+preview = true
+extend-select = [
+    'E', 'F', 'W', 'C90', 'A', 'ANN', 'S', 'B', 'PT', 'Q', 'RSE', 'SIM', 'ARG', 'PTH', 'PD',
+    'TRY', 'FLY', 'NPY', 'PLC', 'PLE', 'PLW', 'I',
+    ]

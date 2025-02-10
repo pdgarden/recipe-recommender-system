@@ -5,15 +5,14 @@ Scrap recipes from db recipe, available here: https://cosylab.iiitd.edu.in/recip
 # -------------------------------------------------------------------------------------------------------------------- #
 # Imports
 
-import os
 import time
-from typing import List
 from dataclasses import dataclass
+from pathlib import Path
+from typing import List
 
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-
 
 # -------------------------------------------------------------------------------------------------------------------- #
 # Constants
@@ -22,6 +21,7 @@ BASE_URL = "https://cosylab.iiitd.edu.in/recipedb/search_recipeInfo/"
 MIN_ITEM_ID = 0
 MAX_ITEM_ID = 150_000
 DISPLAYED_PROGRESSION_BATCH = 500
+HTTP_REQUEST_TIMEOUT = 10
 
 
 # -------------------------------------------------------------------------------------------------------------------- #
@@ -64,10 +64,11 @@ def get_soup(recipe_id: int) -> BeautifulSoup:
 
     url = BASE_URL + str(recipe_id)
 
-    r = requests.post(url)
+    r = requests.post(url, timeout=HTTP_REQUEST_TIMEOUT)
 
     if r.status_code != 200:
-        raise Exception(f"Invalid request status_code ({r.status_code}) for url {url} ")
+        error_msg = f"Invalid request status_code ({r.status_code}) for url {url} "
+        raise requests.exceptions.HTTPError(error_msg)
 
     return BeautifulSoup(r.text, "html.parser")
 
@@ -96,8 +97,8 @@ if __name__ == "__main__":
 
             list_recipes.append(recipe)
 
-        except Exception:
-            pass
+        except Exception as exc:
+            print(f"Error while processing item {curr_id}: {exc}")
 
         if curr_id % DISPLAYED_PROGRESSION_BATCH == 0:
             print(f"Items: {curr_id}")
@@ -108,9 +109,9 @@ if __name__ == "__main__":
                     "ingredients": [" | ".join(e.ingredients) for e in list_recipes],
                     "origin": [e.origin for e in list_recipes],
                 }
-            ).to_csv(os.path.join("data", "big_db_recipes_raw.csv"), index=False)
+            ).to_csv(Path("data") / "big_db_recipes_raw.csv", index=False)
 
-    df = pd.DataFrame(
+    df_recipes = pd.DataFrame(
         {
             "id": [e.id for e in list_recipes],
             "name": [e.name for e in list_recipes],
@@ -119,11 +120,11 @@ if __name__ == "__main__":
         }
     )
 
-    df.to_csv(os.path.join(os.path.dirname(os.getcwd()), "data", "recipe_db_raw.zip"), index=False)
+    df_recipes.to_csv(Path.cwd().parent / "data" / "recipe_db_raw.zip", index=False)
 
     print(
         "Done",
-        f"nb_recipes: {len(df)}",
-        f"first recipes: {df.head()}",
+        f"nb_recipes: {len(df_recipes)}",
+        f"first recipes: {df_recipes.head()}",
         sep="\n\n---\n",
     )

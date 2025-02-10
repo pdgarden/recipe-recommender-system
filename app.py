@@ -5,13 +5,13 @@ Streamlit app implementing a recipe recommender system
 # -------------------------------------------------------------------------------------------------------------------- #
 # Imports
 
-import os
+from pathlib import Path
 
-import plotly.express as px
 import pandas as pd
+import plotly.express as px
 import streamlit as st
 
-from utils.scoring import labelize_recipes, compute_recipe_affinity_score
+from utils.scoring import compute_recipe_affinity_score, labelize_recipes
 
 # -------------------------------------------------------------------------------------------------------------------- #
 # Constants
@@ -20,7 +20,7 @@ DEFAULT_NB_ASKED_INGREDIENTS = 500
 NB_RECOMMENDED_RECIPES = 20
 PLOT_DISPLAYED_HOVER_COLUMNS = ["Name", "Ingredients", "Origin", "Link"]
 
-df_features = pd.read_csv(os.path.join("data", "recipe_db.zip"))
+df_features = pd.read_csv(Path("data") / "recipe_db.zip")
 
 INGREDIENTS_PER_RECIPE = df_features["Ingredients"].str.split(", ")
 INGREDIENTS = pd.Series([element for list_ in INGREDIENTS_PER_RECIPE for element in list_]).value_counts()

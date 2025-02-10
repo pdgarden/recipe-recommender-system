@@ -6,7 +6,10 @@ import pandas as pd
 
 
 def labelize_recipes(
-    recipes: pd.Series, liked_ingredients: List[str], disliked_ingredients: List[str], thresh_affinity_score=False
+    recipes: pd.Series,
+    liked_ingredients: List[str],
+    disliked_ingredients: List[str],
+    thresh_affinity_score: bool = False
 ) -> pd.Series:
 
     affinity_score = pd.Series(np.zeros(len(recipes)))
@@ -49,7 +52,7 @@ def compute_recipe_affinity_score(df: pd.DataFrame) -> pd.DataFrame:
     # normalize and query unlabeled_embeddings
     faiss.normalize_L2(unlabeled_embeddings)
 
-    r_distances, r_indexes = index.search(unlabeled_embeddings, k=NB_NEIGHBORS)
+    _, r_indexes = index.search(unlabeled_embeddings, k=NB_NEIGHBORS)
 
     df_labeled = df[df.affinity_score_label != 0].reset_index(drop=True)
     df_unlabeled = df[df.affinity_score_label == 0].reset_index(drop=True)
