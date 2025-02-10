@@ -32,7 +32,7 @@ The studied recommendation system is implemented using streamlit.
 1. Install uv (v0.5.10):
    1. For macOS / Linux `curl -LsSf https://astral.sh/uv/0.5.10/install.sh | sh`
    2. For windows: `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/0.5.10/install.ps1 | iex"`
-2. Create virtual environment: `uv sync --all-extras`
+2. Create virtual environment: `uv sync --all-groups`
 3. To develop (Optional):
    1. `uv run pre-commit install -t commit-msg -t pre-commit` (Setup pre-commit)
 
