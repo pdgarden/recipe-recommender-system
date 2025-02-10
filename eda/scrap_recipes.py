@@ -101,7 +101,7 @@ if __name__ == "__main__":
                     "ingredients": [" | ".join(e.ingredients) for e in list_recipes],
                     "origin": [e.origin for e in list_recipes],
                 }
-            ).to_csv(Path("data") / "big_db_recipes_raw.csv", index=False)
+            ).to_parquet(Path("data") / "big_db_recipes_raw.parquet", index=False)
 
     df_recipes = pd.DataFrame(
         {
@@ -112,7 +112,7 @@ if __name__ == "__main__":
         }
     )
 
-    df_recipes.to_csv(Path.cwd().parent / "data" / "recipe_db_raw.zip", index=False)
+    df_recipes.to_parquet(Path.cwd().parent / "data" / "recipe_db_raw.parquet", index=False)
 
     print(
         "Done",
