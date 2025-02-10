@@ -51,7 +51,6 @@ launch_recipes_recommendation = st.sidebar.button("Get recipe recommendations")
 # Recipe recommendation
 
 if launch_recipes_recommendation:
-
     # Compute affinity score
     df_features["affinity_score_label"] = labelize_recipes(
         df_features["Ingredients"], liked_ingredients, disliked_ingredients

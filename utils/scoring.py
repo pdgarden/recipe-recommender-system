@@ -9,9 +9,8 @@ def labelize_recipes(
     recipes: pd.Series,
     liked_ingredients: List[str],
     disliked_ingredients: List[str],
-    thresh_affinity_score: bool = False
+    thresh_affinity_score: bool = False,
 ) -> pd.Series:
-
     affinity_score = pd.Series(np.zeros(len(recipes)))
 
     # add special char to differentiate match between composed ingredients e.g. milk / coconut milk
@@ -31,7 +30,6 @@ def labelize_recipes(
 
 
 def compute_recipe_affinity_score(df: pd.DataFrame) -> pd.DataFrame:
-
     NB_NEIGHBORS = 5
 
     glove_embedding_cols = [c for c in df.columns if "glove" in c]

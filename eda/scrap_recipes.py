@@ -37,11 +37,9 @@ class Recipe:
 
 
 def get_recipe_ingredients(soup: BeautifulSoup) -> List[str]:
-
     list_ingredients = []
 
     for tag in soup.find_all(id="ingredient_nutri")[0].find_all("td"):
-
         extract = tag.find("a")
 
         if extract is not None:
@@ -51,17 +49,14 @@ def get_recipe_ingredients(soup: BeautifulSoup) -> List[str]:
 
 
 def get_recipe_name(soup: BeautifulSoup) -> str:
-
     return soup.find_all("h3")[0].text
 
 
 def get_recipe_origin(soup: BeautifulSoup) -> str:
-
     return soup.find(id="recipe_info").find("p").contents[0]
 
 
 def get_soup(recipe_id: int) -> BeautifulSoup:
-
     url = BASE_URL + str(recipe_id)
 
     r = requests.post(url, timeout=HTTP_REQUEST_TIMEOUT)
@@ -77,13 +72,10 @@ def get_soup(recipe_id: int) -> BeautifulSoup:
 # Main
 
 if __name__ == "__main__":
-
     list_recipes = []
 
     for curr_id in range(MIN_ITEM_ID, MAX_ITEM_ID):
-
         try:
-
             time.sleep(0.2)
 
             curr_soup = get_soup(curr_id)
