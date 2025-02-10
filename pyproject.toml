@@ -18,11 +18,17 @@ dev = [
     "pre-commit>=4.1.0",
     "ruff>=0.9.5",
 ]
+eda = [
+    "great-tables>=0.16.1",
+    "ipykernel>=6.29.5",
+    "jupyter>=1.1.1",
+    "sentence-transformers>=3.4.1",
+    "umap-learn>=0.5.7",
+]
 
 [tool.ruff]
 line-length = 120
 target-version = "py311"
-exclude = ["eda/eda_recipe_recommendations.ipynb"]
 src = ["app"]
 
 [tool.ruff.lint]
