@@ -1876,6 +1876,7 @@ eda = [
     { name = "great-tables" },
     { name = "ipykernel" },
     { name = "jupyter" },
+    { name = "nbformat" },
     { name = "sentence-transformers" },
     { name = "umap-learn" },
 ]
@@ -1899,6 +1900,7 @@ eda = [
     { name = "great-tables", specifier = ">=0.16.1" },
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "jupyter", specifier = ">=1.1.1" },
+    { name = "nbformat", specifier = ">=5.10.4" },
     { name = "sentence-transformers", specifier = ">=3.4.1" },
     { name = "umap-learn", specifier = ">=0.5.7" },
 ]

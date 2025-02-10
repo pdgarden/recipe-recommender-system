@@ -22,6 +22,7 @@ eda = [
     "great-tables>=0.16.1",
     "ipykernel>=6.29.5",
     "jupyter>=1.1.1",
+    "nbformat>=5.10.4",
     "sentence-transformers>=3.4.1",
     "umap-learn>=0.5.7",
 ]
