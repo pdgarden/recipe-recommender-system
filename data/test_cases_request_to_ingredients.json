@@ -1,0 +1,220 @@
+{
+    "29821f7b6e6937baec7408dc39c37e2915992fa7d693e586d7ffadb5": {
+        "recipe_request": "Suggest a dish for dinner. I'm fond of onions, bell peppers, and beef, but I'd rather avoid garlic.",
+        "positive_ingredients": [
+            "onions",
+            "bell peppers",
+            "beef"
+        ],
+        "negative_ingredients": [
+            "garlic"
+        ]
+    },
+    "5ee092fb70ca02cbffe48d556a7e3481e3c227d21989cce6c7c862ac": {
+        "recipe_request": "Could you recommend a recipe? I fancy potatoes, carrots, and peas.",
+        "positive_ingredients": [
+            "potatoes",
+            "carrots",
+            "peas"
+        ],
+        "negative_ingredients": [
+        ]
+    },
+    "2266ee45c782cb0e7d2e34dc04065a5f0c9f5d9f3590e0ea0d3423d7": {
+        "recipe_request": "I'm seeking recipe ideas. I enjoy spinach, mushrooms, and cheese, but please exclude olives.",
+        "positive_ingredients": [
+            "spinach",
+            "mushrooms",
+            "cheese"
+        ],
+        "negative_ingredients": [
+            "olives"
+        ]
+    },
+    "35a1b7b3d04bc863bed6be5fcf821d2c101387e7b8e77e62c5ce7823": {
+        "recipe_request": "What can I cook tonight? I'm a fan of eggs, milk, and flour, but I prefer not to include nuts.",
+        "positive_ingredients": [
+            "eggs",
+            "milk",
+            "flour"
+        ],
+        "negative_ingredients": [
+            "nuts"
+        ]
+    },
+    "aec6722ee328a5d2f8b6bfc1d4239ebeb4182456493e729a77dff730": {
+        "recipe_request": "I need inspiration for tonight's meal. I appreciate chicken, rice, and broccoli, but I'm not keen on food with spices like curry.",
+        "positive_ingredients": [
+            "chicken",
+            "rice",
+            "broccoli"
+        ],
+        "negative_ingredients": [
+            "curry"
+        ]
+    },
+    "37f800997d0e29af8794ea3289a67a616bdf8f547f81486baf63a31d": {
+        "recipe_request": "I'm in the mood for something new. I'm partial to pasta, tomatoes, and basil, but I'd prefer no meat in the recipe.",
+        "positive_ingredients": [
+            "pasta",
+            "tomatoes",
+            "basil"
+        ],
+        "negative_ingredients": [
+            "meat"
+        ]
+    },
+    "70385f094a5f817e33753e33b82b62279310a48438bb0c2315cbc275": {
+        "recipe_request": "I'm planning tonight's dinner. I'm interested in eggs, and flour, but I'd like to avoid nuts.",
+        "positive_ingredients": [
+            "eggs",
+            "flour"
+        ],
+        "negative_ingredients": [
+            "nuts"
+        ]
+    },
+    "cc384148c9fbb10f16a27c249f26381621cd18dc61fdfeed1eaa99d1": {
+        "recipe_request": "I'm brainstorming meal ideas. I'm inclined towards chicken, rice, and broccoli, but nothing too spicy.",
+        "positive_ingredients": [
+            "chicken",
+            "rice",
+            "broccoli"
+        ],
+        "negative_ingredients": [
+            "spicy"
+        ]
+    },
+    "7d99cb39ecd786728da710519e29e81b5ea9bc4327694ff5ab684ae6": {
+        "recipe_request": "I'm exploring dinner options. I'm enthusiastic about spinach, mushrooms, and cheese, but let's leave out olives.",
+        "positive_ingredients": [
+            "spinach",
+            "mushrooms",
+            "cheese"
+        ],
+        "negative_ingredients": [
+            "olives"
+        ]
+    },
+    "1a5bc0f48c802eb45f6b0052827cfa317e2f4573d9de1473fa3cc7dc": {
+        "recipe_request": "I'm considering what to cook. I'm drawn to potatoes, carrots, and peas, but I'd like to exclude onions.",
+        "positive_ingredients": [
+            "potatoes",
+            "carrots",
+            "peas"
+        ],
+        "negative_ingredients": [
+            "onions"
+        ]
+    },
+    "d897a31a8439f4091f181d03b9f12c3f2ff30aa44f6d25cd1116c54b": {
+        "recipe_request": "What should I make for dinner? I'm fond of salmon, lemon, and dill, but I'd rather avoid heavy cream.",
+        "positive_ingredients": [
+            "salmon",
+            "lemon",
+            "dill"
+        ],
+        "negative_ingredients": [
+            "heavy cream"
+        ]
+    },
+    "9df13edbda7d6f0b0d1265d89b925319cb36c08fe444fcad40375e16": {
+        "recipe_request": "I'm pondering dinner choices. I'm fond of trout, lemon, and dill, but I'd rather not use heavy cream.",
+        "positive_ingredients": [
+            "trout",
+            "lemon",
+            "dill"
+        ],
+        "negative_ingredients": [
+            "heavy cream"
+        ]
+    },
+    "cc6eb56d6524893f6ca3b1a301afd4281f9694a1a4bc46d9f3fdca8a": {
+        "recipe_request": "I'm keen on onions, bell peppers, and beef, but let's skip the garlic. I'm craving something delicious.",
+        "positive_ingredients": [
+            "onions",
+            "bell peppers",
+            "beef"
+        ],
+        "negative_ingredients": [
+            "garlic"
+        ]
+    },
+    "405529f9353fca112997d21c0ef37797bbbc5209581bf55cce8ab3b2": {
+        "recipe_request": "I'm into tofu, soy sauce, and vegetables, but I'd like to avoid coconut milk. I'm contemplating recipe ideas.",
+        "positive_ingredients": [
+            "tofu",
+            "soy sauce",
+            "vegetables"
+        ],
+        "negative_ingredients": [
+            "coconut milk"
+        ]
+    },
+    "fb828e9f758b8d1dbbfb492a4824478872e349b2f77efe5b5324d120": {
+        "recipe_request": "I'm a fan of shrimp, garlic, and butter, but I'd prefer not to include wine. I need a recipe idea for tonight.",
+        "positive_ingredients": [
+            "shrimp",
+            "garlic",
+            "butter"
+        ],
+        "negative_ingredients": [
+            "wine"
+        ]
+    },
+    "99705a9403e6409f07d15411e776b179413b98c18869d0b868557f44": {
+        "recipe_request": "I'm partial to pasta, tomatoes, and basil, but I'd prefer an option without meat. I'm thinking about dinner.",
+        "positive_ingredients": [
+            "pasta",
+            "tomatoes",
+            "basil"
+        ],
+        "negative_ingredients": [
+            "meat"
+        ]
+    },
+    "10cd261ff5f3bd5faceea5e791cf492f8797cb0429baa453d8f255d2": {
+        "recipe_request": "I'm attracted to lentils, onions, and spices, but I'd prefer to skip bell peppers. I'm deciding on a meal.",
+        "positive_ingredients": [
+            "lentils",
+            "onions",
+            "spices"
+        ],
+        "negative_ingredients": [
+            "bell peppers"
+        ]
+    },
+    "a0226c020e5de6783cc7969084c18fe6947498eadc5c80220b259f69": {
+        "recipe_request": "I'm captivated by shrimp, garlic, and butter, but I'd like to avoid wine in the recipe. I'm mulling over dinner options.",
+        "positive_ingredients": [
+            "shrimp",
+            "garlic",
+            "butter"
+        ],
+        "negative_ingredients": [
+            "wine"
+        ]
+    },
+    "de0decca35ecbccee6f53462efa333b559966216d65137b8ec27c7f0": {
+        "recipe_request": "I'm into tofu, soy sauce, and vegetables, but I'd prefer not to include coconut milk. I'm looking for recipe suggestions.",
+        "positive_ingredients": [
+            "tofu",
+            "soy sauce",
+            "vegetables"
+        ],
+        "negative_ingredients": [
+            "coconut milk"
+        ]
+    },
+    "76fdb7f0e8a1b4e6ade616e34ff9da9362c3b89dbc7c5ba64240ab79": {
+        "recipe_request": "I appreciate lentils, onions, and spices, but I'd rather not have bell peppers. Can you help me decide what to cook?",
+        "positive_ingredients": [
+            "lentils",
+            "onions",
+            "spices"
+        ],
+        "negative_ingredients": [
+            "bell peppers"
+        ]
+    }
+}
