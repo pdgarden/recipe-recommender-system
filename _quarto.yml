@@ -3,8 +3,10 @@ project:
   output-dir: docs
   render:
     - eda/eda_recipe_recommendations.ipynb
+    - eda/eda_ingredients_extraction.ipynb
 
 website:
+
   navbar:
     background: "#497D74"
     tools:
@@ -12,6 +14,15 @@ website:
         menu:
           - text: Source Code
             href: https://github.com/pdgarden/recipe-recommender-system
+
+  sidebar:
+    style: "floating"
+    search: false
+    contents:
+      - text: "Recipe recommendation"
+        href: eda/eda_recipe_recommendations.ipynb
+      - text : "Ingredients extraction"
+        href: eda/eda_ingredients_extraction.ipynb
 
 format:
   html:
