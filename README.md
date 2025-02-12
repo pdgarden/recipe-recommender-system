@@ -23,6 +23,9 @@ request in natural language. It is implemented using Streamlit, faiss, and ollam
 
 For a more detailed explanation, please refer to the analysis step available: [here](https://pdgarden.github.io/recipe-recommender-system/).
 
+[![Watch the video](./images/recommender_system_architecture.png))](./images/app_example.mp4)
+
+
 # 2. 📟 Prerequisites
 
 The project uses:
