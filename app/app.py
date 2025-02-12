@@ -16,7 +16,7 @@ from utils.scoring import compute_recipe_affinity_score, labelize_recipes
 # -------------------------------------------------------------------------------------------------------------------- #
 # App
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", page_title="Recipe recommender", page_icon="🍝")
 
 st.header("Recipes recommendation")
 st.sidebar.header("Information about your taste")
