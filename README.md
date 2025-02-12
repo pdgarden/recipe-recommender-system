@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/python-3.11-blue" alt="Supported Python version"> <img src="https://img.shields.io/static/v1?logo=uv&label=uv&message=0.5.10&color=blue"> <img src="https://img.shields.io/static/v1?logo=Streamlit&label=Streamlit&message=1.22.0&color=blue">
+<img src="https://img.shields.io/badge/python-3.11-blue" alt="Supported Python version"> <img src="https://img.shields.io/static/v1?logo=uv&label=uv&message=0.5.10&color=blue"> <img src="https://img.shields.io/static/v1?logo=Streamlit&label=Streamlit&message=1.22.0&color=blue"> <img src="https://img.shields.io/static/v1?logo=ollama&label=Ollama&message=0.5.5&color=blue">
 
 # Recipe recommender system
 
@@ -17,11 +17,11 @@
 
 # 1. 💬 Project description
 
-The following repo implements a content based recipe recommendation system. The system leverages a LLM to handle the 
-user request, and a mix of heuristics, sentence embedding and similarity search to suggest recipes based on a user's 
-request in natural language. It is implemented using Streamlit, faiss, and ollama.
+The following repo implements a content based recipe recommendation system. The system leverages a Large Language model 
+(LLM) to handle the user request in natural language, along with a mix of heuristics, sentence embedding and 
+similarity search to suggest relevant recipes. It is implemented using Streamlit, faiss, and ollama.
 
-For a more detailed explanation, please refer to the analysis step available: [here](https://pdgarden.github.io/recipe-recommender-system/).
+For a more detailed explanation, please refer to the analysis steps available [here](https://pdgarden.github.io/recipe-recommender-system/).
 
 
 
