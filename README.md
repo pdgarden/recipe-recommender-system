@@ -21,7 +21,7 @@ The following repo implements a content based recipe recommendation system. The 
 user request, and a mix of heuristics, sentence embedding and similarity search to suggest recipes based on a user's 
 request in natural language. It is implemented using Streamlit, faiss, and ollama.
 
-For a more detailed explanation, please refer to the following: [here](https://pdgarden.github.io/recipe-recommender-system/).
+For a more detailed explanation, please refer to the analysis step available: [here](https://pdgarden.github.io/recipe-recommender-system/).
 
 # 2. 📟 Prerequisites
 
