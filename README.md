@@ -23,7 +23,7 @@ request in natural language. It is implemented using Streamlit, faiss, and ollam
 
 For a more detailed explanation, please refer to the analysis step available: [here](https://pdgarden.github.io/recipe-recommender-system/).
 
-[![Watch the video](./images/recommender_system_architecture.png))](./images/app_example.mp4)
+
 
 
 # 2. 📟 Prerequisites
@@ -61,11 +61,15 @@ Once the set up is done, the app can be launched by executing the following comm
 uv run streamlit run app/app.py
 ```
 
+Here is what the app looks like:
+![App](./images/app_example.png)
+
+
 # 4. 🔗 System architecture
 
 The system is decoupled into different parts, allowing each part to be improved independently of the other parts.
 
-![Alt text](./images/recommender_system_architecture.png)
+![Architecture](./images/recommender_system_architecture.png)
 
 
 # 5. 📁 Dataset
