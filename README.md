@@ -8,11 +8,12 @@
 - [3. 🔌 Quickstart](#3--quickstart)
   - [3.1 ⚙️ Set up](#31-️-set-up)
   - [3.2 🚀 Run](#32--run)
-- [4. 🔗 System architecture](#4--system-architecture)
-- [5. 📁 Dataset](#5--dataset)
-- [6. 👁️ Exploratory data analysis](#6-️-exploratory-data-analysis)
-- [7 🏆 Code Quality and Formatting](#7--code-quality-and-formatting)
-- [8. 📚 Complementary documentation](#8--complementary-documentation)
+  - [4. 🔑 Environment variables](#4--environment-variables)
+- [5. 🔗 System architecture](#5--system-architecture)
+- [6. 📁 Dataset](#6--dataset)
+- [7. 👁️ Exploratory data analysis](#7-️-exploratory-data-analysis)
+- [8 🏆 Code Quality and Formatting](#8--code-quality-and-formatting)
+- [9. 📚 Complementary documentation](#9--complementary-documentation)
 
 
 # 1. 💬 Project description
@@ -31,7 +32,7 @@ For a more detailed explanation, please refer to the analysis steps available [h
 The project uses:
 - uv (`v0.5.10`) to handle python version and dependencies.
 - ollama (`v0.5.5`) to interact with the LLM for ingredients extraction.
-- quarto to (`v1.4.554`) to generate the EDA report.
+- quarto (`v1.4.554`) to generate the EDA report.
 
 
 # 3. 🔌 Quickstart
@@ -64,15 +65,28 @@ uv run streamlit run app/app.py
 Here is what the app looks like:
 ![App](./images/app_example.png)
 
+By default, the app uses the `gemma2:2b` model from Ollama. You can change this through the environment variables.
 
-# 4. 🔗 System architecture
+## 4. 🔑 Environment variables
+
+The interaction with the LLM (model and API provider) is configured using environment variables. You can leave as is or override the default values to use another provider or model compatible with the OpenAI SDK.
+
+   Environment Variable | Description                                                     | Default Value          |
+ |----------------------|-----------------------------------------------------------------|------------------------|
+ | `LLM_BASE_URL`       | Base URL of the LLM API. Used through OpenAI SDK.               | `http://localhost:11434/v1` |
+ | `LLM_API_KEY`        | API key to connect to the LLM API. Used through OpenAI SDK.     | `ollama`               |
+ | `LLM_MODEL`          | Name of LLM model used. Used through OpenAI SDK.                | `gemma2:2b`            |
+
+To override the default values, you can set these environment variables directly in your environment, or in a `.env` file or  at the repo's root.
+
+# 5. 🔗 System architecture
 
 The system is decoupled into different parts, allowing each part to be improved independently of the other parts.
 
 ![Architecture](./images/recommender_system_architecture.png)
 
 
-# 5. 📁 Dataset
+# 6. 📁 Dataset
 
 The recipe recommendation system suggests recipes based on an affinity score computed with every recipes of a dataset.
 
@@ -80,7 +94,7 @@ The recipe recommendation system suggests recipes based on an affinity score com
 * For each recipe, the name, ingredients and origin is provided
 
 
-# 6. 👁️ Exploratory data analysis
+# 7. 👁️ Exploratory data analysis
 
 The EDA (Exploratory Data Analysis) steps are done trough the notebooks in the `eda` folder. The current notebook are:
 - `eda_recipe_recommendations.ipynb`: explore the use of word embeddings and KNN algorithm to define an affinity score for the user.
@@ -90,15 +104,15 @@ The EDA (Exploratory Data Analysis) steps are done trough the notebooks in the `
 The corresponding EDA are deployed online using Quarto and are accessible [here](https://pdgarden.github.io/recipe-recommender-system/).
 
 
-# 7 🏆 Code Quality and Formatting
+# 8 🏆 Code Quality and Formatting
 
 - The python files are linted and formatted using ruff, see configuration in `pyproject.toml`
 - Pre-commit configuration is available to ensure trigger quality checks (e.g. linter)
 - Commit messages follow the conventional commit convention
-- A CI pipeline is implemented on github to lint code and redeploy docs
+- A CI/CD pipeline is implemented with github actions to lint the code and redeploy docs
 
 
-# 8. 📚 Complementary documentation
+# 9. 📚 Complementary documentation
 
 - [Ollama](https://ollama.com/): To interact with the LLM
 - [HuggingFace's sentence transformers](https://huggingface.co/sentence-transformers): To generate embeddings

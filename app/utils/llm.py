@@ -1,8 +1,8 @@
 from openai import OpenAI
 from pydantic import BaseModel
 
-import config
 import constants
+from configuration import config
 
 
 class IngredientsPosNeg(BaseModel):
@@ -91,7 +91,10 @@ def make_ingredients_singular(
 
 def extract_clean_ingredients(recipe_request: str) -> IngredientsPosNeg:
     """Take a recipe request and return the associated positive and negative ingredients in clean format."""
-    llm_args = {"llm_client": OpenAI(**config.LLM_CREDENTIALS), "llm_model": config.LLM_MODEL}
+    llm_args = {
+        "llm_client": OpenAI(base_url=config.llm_base_url, api_key=config.llm_api_key),
+        "llm_model": config.llm_model,
+    }
 
     ingredients_pos_neg = extract_raw_ingredients(recipe_request=recipe_request, **llm_args)
 
