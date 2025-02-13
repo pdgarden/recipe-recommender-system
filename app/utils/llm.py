@@ -2,10 +2,7 @@ from openai import OpenAI
 from pydantic import BaseModel
 
 import constants
-
-LLM_CREDENTIALS = {"base_url": "http://localhost:11434/v1", "api_key": "ollama"}
-LLM_MODEL = "gemma2:2b"
-DEFAULT_LLM_CLIENT = OpenAI(**LLM_CREDENTIALS)
+from configuration import config
 
 
 class IngredientsPosNeg(BaseModel):
@@ -23,8 +20,8 @@ class Ingredients(BaseModel):
 
 def extract_raw_ingredients(
     recipe_request: str,
-    llm_client: OpenAI = DEFAULT_LLM_CLIENT,
-    llm_model: str = LLM_MODEL,
+    llm_model: str,
+    llm_client: OpenAI,
 ) -> IngredientsPosNeg:
     """Get the list of positive and negative ingredients for a given recipe request."""
 
@@ -58,8 +55,8 @@ def extract_raw_ingredients(
 
 def make_ingredients_singular(
     ingredients: Ingredients,
-    llm_client: OpenAI = DEFAULT_LLM_CLIENT,
-    llm_model: str = LLM_MODEL,
+    llm_model: str,
+    llm_client: OpenAI,
 ) -> Ingredients:
     """Convert the ingredients in plural to ingredients in singular."""
 
@@ -94,10 +91,19 @@ def make_ingredients_singular(
 
 def extract_clean_ingredients(recipe_request: str) -> IngredientsPosNeg:
     """Take a recipe request and return the associated positive and negative ingredients in clean format."""
-    ingredients_pos_neg = extract_raw_ingredients(recipe_request=recipe_request)
+    llm_args = {
+        "llm_client": OpenAI(base_url=config.llm_base_url, api_key=config.llm_api_key),
+        "llm_model": config.llm_model,
+    }
 
-    ingredients_singular_pos = make_ingredients_singular(ingredients=ingredients_pos_neg.positive_ingredients)
-    ingredients_singular_neg = make_ingredients_singular(ingredients=ingredients_pos_neg.negative_ingredients)
+    ingredients_pos_neg = extract_raw_ingredients(recipe_request=recipe_request, **llm_args)
+
+    ingredients_singular_pos = make_ingredients_singular(
+        ingredients=ingredients_pos_neg.positive_ingredients, **llm_args
+    )
+    ingredients_singular_neg = make_ingredients_singular(
+        ingredients=ingredients_pos_neg.negative_ingredients, **llm_args
+    )
 
     ingredients_pos_neg_singular = IngredientsPosNeg(
         positive_ingredients=ingredients_singular_pos.ingredients,

@@ -11,6 +11,7 @@ dependencies = [
     "openai>=1.61.1",
     "pandas==1.5.0",
     "plotly==5.10.0",
+    "pydantic-settings>=2.7.1",
     "pydantic>=2.10.6",
     "streamlit==1.22.0",
 ]
@@ -24,6 +25,8 @@ eda = [
     "great-tables>=0.16.1",
     "ipykernel>=6.29.5",
     "jupyter>=1.1.1",
+    "langchain-ollama>=0.2.3",
+    "langgraph>=0.2.72",
     "nbformat>=5.10.4",
     "sentence-transformers>=3.4.1",
     "umap-learn>=0.5.7",

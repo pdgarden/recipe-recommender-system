@@ -8,6 +8,7 @@
 - [3. 🔌 Quickstart](#3--quickstart)
   - [3.1 ⚙️ Set up](#31-️-set-up)
   - [3.2 🚀 Run](#32--run)
+  - [3.3. 🔑 Environment variables](#33--environment-variables)
 - [4. 🔗 System architecture](#4--system-architecture)
 - [5. 📁 Dataset](#5--dataset)
 - [6. 👁️ Exploratory data analysis](#6-️-exploratory-data-analysis)
@@ -31,7 +32,7 @@ For a more detailed explanation, please refer to the analysis steps available [h
 The project uses:
 - uv (`v0.5.10`) to handle python version and dependencies.
 - ollama (`v0.5.5`) to interact with the LLM for ingredients extraction.
-- quarto to (`v1.4.554`) to generate the EDA report.
+- quarto (`v1.4.554`) to generate the EDA report.
 
 
 # 3. 🔌 Quickstart
@@ -64,6 +65,19 @@ uv run streamlit run app/app.py
 Here is what the app looks like:
 ![App](./images/app_example.png)
 
+By default, the app uses the `gemma2:2b` model from Ollama. You can change this through the environment variables.
+
+## 3.3. 🔑 Environment variables
+
+The interaction with the LLM (model and API provider) is configured using environment variables. You can leave as is or override the default values to use another provider or model compatible with the OpenAI SDK.
+
+   Environment Variable | Description                                                     | Default Value          |
+ |----------------------|-----------------------------------------------------------------|------------------------|
+ | `LLM_BASE_URL`       | Base URL of the LLM API. Used through OpenAI SDK.               | `http://localhost:11434/v1` |
+ | `LLM_API_KEY`        | API key to connect to the LLM API. Used through OpenAI SDK.     | `ollama`               |
+ | `LLM_MODEL`          | Name of LLM model used. Used through OpenAI SDK.                | `gemma2:2b`            |
+
+To override the default values, you can set these environment variables directly in your environment, or in a `.env` file or  at the repo's root.
 
 # 4. 🔗 System architecture
 
@@ -95,7 +109,7 @@ The corresponding EDA are deployed online using Quarto and are accessible [here]
 - The python files are linted and formatted using ruff, see configuration in `pyproject.toml`
 - Pre-commit configuration is available to ensure trigger quality checks (e.g. linter)
 - Commit messages follow the conventional commit convention
-- A CI pipeline is implemented on github to lint code and redeploy docs
+- A CI/CD pipeline is implemented with github actions to lint the code and redeploy docs
 
 
 # 8. 📚 Complementary documentation
